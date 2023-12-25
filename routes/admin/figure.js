@@ -7,7 +7,7 @@ var BrandModel = require('../../models/BrandModel');
 router.get('/', async (req, res) => {
    var figures = await FigureModel.find({}).populate('brand');
    //Path: views/mobile/index.hbsS
-   res.render('figure/index', { figures });
+   res.render('figure/index', {figures});
 })
 
 // router.get('/customer', async (req, res) => {
