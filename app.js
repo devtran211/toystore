@@ -8,14 +8,17 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var brandRouter = require('./routes/admin/brand');
 var figureRouter = require('./routes/admin/figure');
+var adminRouter = require('./routes/admin/admin');
+var colorRouter = require('./routes/admin/color');
+
 
 
 
 var app = express();
 
 var mongoose = require("mongoose");
-var uri = "mongodb+srv://cuongtranmongo:fHRny7q9u4wN9iAE@toystore.cqorbge.mongodb.net/ToyStore";
-//var uri = "mongodb://localhost:27017/ToyStore";
+//var uri = "mongodb+srv://cuongtranmongo:fHRny7q9u4wN9iAE@toystore.cqorbge.mongodb.net/ToyStore";
+var uri = "mongodb://localhost:27017/ToyStore";
 mongoose.set('strictQuery', true); 
 
 mongoose.connect(uri)
@@ -36,6 +39,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/brand', brandRouter);
 app.use('/figure', figureRouter);
+app.use('/admin', adminRouter);
+app.use('/color', colorRouter);
 
 
 // catch 404 and forward to error handler

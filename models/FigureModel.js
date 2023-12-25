@@ -6,6 +6,10 @@ var FigureSchema = mongoose.Schema({
    brand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'brands'  // 'brands': collection
+   },
+   color: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'colors'  // 
    }
 });
 //Relationship : figuress (many) - brands (one)

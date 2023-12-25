@@ -1,18 +1,11 @@
+<h1>Add new color</h1>
+
 <div class="container">
-    <form action="/brand/edit/{{ brand._id }}" method="post">
-        <label for="">Brand Name</label>
-        <input type="text" id="" name="brandName" value="{{ brand.brandName }}" required>
+    <form action="/color/add" method="post">
+        <label for="">Color Name</label>
+        <input type="text" id="" name="name" required>
 
-        <label for="">Brand Origin</label>
-        <input type="text" id="" name="origin" value="{{ brand.origin }}" required>
-
-        <label for="">Partner</label>
-        <input type="text" id="" name="partnerName" value="{{ brand.partnerName }}" required>
-
-        <label for="">Logo</label>
-        <input type="text" id="" name="image" value="{{ brand.image }}" required>
-
-        <input type="submit" value="Save">
+        <input type="submit" value="Add">
     </form>
 </div>
 
@@ -25,6 +18,7 @@
         box-sizing: border-box;
     }
 
+    input[type=url],
     input[type=text],
     select,
     textarea {
