@@ -15,6 +15,13 @@
          {{/each}}
       </select>
 
+      Product brand: <br>
+      <select name="brand">
+         {{#each brands }}
+         <option value="{{ _id }}"> {{ color }}</option>
+         {{/each}}
+      </select>
+
       <label for="">Image</label>
       <input type="url" id="" name="image" id="" required value="{{ figure.image }}">
       <img src="{{ figure.image }}" alt="" width="200" height="300">

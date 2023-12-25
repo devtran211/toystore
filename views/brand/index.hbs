@@ -6,6 +6,7 @@
                 <th>Brand Name</th>
                 <th>Brand Origin</th>
                 <th>Partner</th>
+                <th>Color</th>
                 <th>Logo</th>
                 <th>Menu</th>
             </tr>
@@ -13,9 +14,10 @@
         <tbody>
             {{#each brands }}
             <tr>
-                <td><a href="/brand/detail/{{ _id }}">{{ brandName }}</a></td>
+                <td><a>{{ brandName }}</a></td>
                 <td>{{origin}}</td>
                 <td>{{partnerName}}</td>
+                <td>{{color}}</td>
                 <td><img src="{{image}}" alt="" width="150" height="160"></td>
                 <td>
                     <a class="button-3" href="/brand/edit/{{ _id }}">Edit</a>

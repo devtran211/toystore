@@ -9,7 +9,8 @@ var BrandSchema = mongoose.Schema(
       },
       origin: String,
       partnerName: String,
-      image: String
+      image: String,
+      color: String
    });
 var BrandModel = mongoose.model('brands', BrandSchema);
 module.exports = BrandModel;

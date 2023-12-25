@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var BrandModel = require('../../models/BrandModel');
-var FigureModel = require('../../models/FigureModel');
+//var FigureModel = require('../../models/FigureModel');
 
 router.get('/', async (req, res) => {
    var brands = await BrandModel.find({});
