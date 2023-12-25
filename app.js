@@ -13,8 +13,8 @@ var adminRouter = require('./routes/admin/admin');
 var app = express();
 
 var mongoose = require("mongoose");
-//var uri = "mongodb+srv://cuongtranmongo:fHRny7q9u4wN9iAE@toystore.cqorbge.mongodb.net/ToyStore";
-var uri = "mongodb://localhost:27017/ToyStore";
+var uri = "mongodb+srv://cuongtranmongo:fHRny7q9u4wN9iAE@toystore.cqorbge.mongodb.net/ToyStore";
+//var uri = "mongodb://localhost:27017/ToyStore";
 mongoose.set('strictQuery', true); 
 
 mongoose.connect(uri)
