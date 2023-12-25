@@ -2,16 +2,13 @@ var express = require('express');
 var router = express.Router();
 var FigureModel = require('../../models/FigureModel');
 var BrandModel = require('../../models/BrandModel');
-const ColorModel = require('../../models/ColorModel');
 
 //URL: localhost:3001/mobile
 router.get('/', async (req, res) => {
-   var figures = await FigureModel.find({}).populate('brand').populate('color');
-   //var fig = await FigureModel.find({}).populate('color');
+   var figures = await FigureModel.find({}).populate('brand');
    //Path: views/mobile/index.hbsS
    res.render('figure/index', { figures });
 })
-
 
 // router.get('/customer', async (req, res) => {
 //    var figures = await FigureModel.find({}).populate('brand');
@@ -20,9 +17,8 @@ router.get('/', async (req, res) => {
 // })
 
 router.get('/add', async (req, res) => {
-   var colors = await ColorModel.find({});
    var brands = await BrandModel.find({});
-   res.render('figure/add', { brands, colors});
+   res.render('figure/add', { brands });
 })
 
 router.post('/add', async (req, res) => {
@@ -40,8 +36,7 @@ router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var figure = await FigureModel.findById(id);
    var brands = await BrandModel.find({});
-   var colors = await ColorModel.find({});
-   res.render('figure/edit', { figure, brands, colors });
+   res.render('figure/edit', { figure, brands });
 })
 
 router.post('/edit/:id', async (req, res) => {

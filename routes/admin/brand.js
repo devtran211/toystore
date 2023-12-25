@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var BrandModel = require('../../models/BrandModel');
-//var FigureModel = require('../../models/FigureModel');
+var FigureModel = require('../../models/FigureModel');
 
 router.get('/', async (req, res) => {
    var brands = await BrandModel.find({});
@@ -18,12 +18,12 @@ router.post('/add', async (req, res) => {
    res.redirect('/brand');
 })
 
-// router.get('/detail/:id', async (req, res) => {
-//    var id = req.params.id;
-//    //SQL: SELECT * FROM mobiles WHERE brand = "id"
-//    var figures = await FigureModel.find({ brand : id }).populate('brand');
-//    res.render('brand/detail', { figures })
-// })
+router.get('/detail/:id', async (req, res) => {
+   var id = req.params.id;
+   //SQL: SELECT * FROM mobiles WHERE brand = "id"
+   var figures = await FigureModel.find({ brand : id }).populate('brand');
+   res.render('brand/detail', { figures })
+})
 
 router.get('/delete/:id', async (req, res) => {
    var id = req.params.id;
